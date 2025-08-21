@@ -23,12 +23,13 @@ def load_images(batch_size):
     return images
 
 def load_datasets(preprocess):
-    image_paths = [os.path.join(IMAGE_FOLDER, filename)
-                   for filename in os.listdir(IMAGE_FOLDER) ]
+    image_paths = sorted([os.path.join(IMAGE_FOLDER, filename)
+                   for filename in os.listdir(IMAGE_FOLDER) ])
 
     print("Loading images and captions...")
-    text_paths = [os.path.join(TEXT_FOLDER, filename)
-                  for filename in os.listdir(TEXT_FOLDER) ]
+    text_paths = sorted([os.path.join(TEXT_FOLDER, filename)
+                  for filename in os.listdir(TEXT_FOLDER) ])
+    
     captions = [read_captions_json(path) for path in text_paths]
 
     train_dataset = CustomDataset(
