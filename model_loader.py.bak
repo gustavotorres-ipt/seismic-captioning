@@ -1,0 +1,171 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from transformers import AutoTokenizer, AutoModel
+from torchvision import models
+
+class CustomCLIPModel(nn.Module):
+    def __init__(self, image_encoder, text_encoder, init_temperature=0.1):
+        super().__init__()
+        self.logit_scale = nn.Parameter(torch.tensor([torch.log(torch.tensor(1.0 / init_temperature))]))
+        self.image_encoder = image_encoder  # Your custom image encoder
+        self.text_encoder = text_encoder  # Your custom text encoder
+        self.projection_layer = nn.Linear(in_features=768, out_features=512)
+
+    def encode_image(self, images):
+        features_image = self.image_encoder(images)[:,:,0,0]
+        return features_image
+        # return self.projection_layer(image_features)  # Project to CLIP space
+
+    def encode_text(self, tokenized_texts):
+        output_llm = self.text_encoder(**tokenized_texts)
+        features_text = output_llm.last_hidden_state[:, 0, :]
+        features_proj = self.projection_layer(features_text)   # Custom text encoder
+        return features_proj
+        # return self.projection_layer(text_features)  # Project to CLIP space
+
+    def forward(self, image, tokenized_text):
+        image_features = self.encode_image(image)
+        text_features = self.encode_text(tokenized_text)
+        # Normalize features
+        image_features = F.normalize(image_features, dim=1)
+        text_features = F.normalize(text_features, dim=1)
+
+        # Compute cosine similarity
+        logits_per_image = image_features @ text_features.T
+        logits_per_text = text_features @ image_features.T
+
+        # Use learned temperature
+        logit_scale = self.logit_scale.exp()
+        logits_per_image *= logit_scale
+        logits_per_text *= logit_scale
+
+        return logits_per_image, logits_per_text
+
+# Decoder que recebe embeddings do CLIP
+class CLIPDecoder(nn.Module):
+    def __init__(self, vocab_size, encoded_captions, hidden_size=512, num_heads=4, temperature=0.7):
+        super().__init__()
+        self.embedding = nn.Embedding(vocab_size, hidden_size)
+        self.transformer = nn.Transformer(d_model=hidden_size, nhead=num_heads, batch_first=True)
+        self.out = nn.Linear(hidden_size, vocab_size)
+        self.memory = encoded_captions
+        self.temperature = temperature
+
+    @torch.no_grad
+    def clip_proj(self, img_embed):
+        with torch.no_grad():
+            # img_embed = model.encode_image(image.unsqueeze(0))
+            img_embed = img_embed.unsqueeze(0)
+
+            # Ensure both are normalized
+            img_embed = F.normalize(img_embed, dim=-1)      # [B, D]
+            text_embeddings = F.normalize(self.memory, dim=-1)  # [N, D]
+
+            # Compute similarities: [B, N]
+            sim = torch.matmul(img_embed, text_embeddings.T)  # cosine similarity
+
+            # Softmax over memory items (along N)
+            weights = F.softmax(sim / self.temperature, dim=-1)  # [B, N]
+
+            # Weighted sum of memory items: [B, D]
+            v_proj = torch.matmul(weights, text_embeddings)
+
+            # L2-normalize the final projection
+            v_proj_norm = F.normalize(v_proj, dim=-1)[0]
+
+            return v_proj_norm
+
+    def generate_square_subsequent_mask(self, sz):
+        return torch.triu(torch.full((sz, sz), float('-inf')), diagonal=1)
+
+    def forward_from_embedding(self, img_clip_embeds, tgt_tokens, debug=True):
+        prefix_emb = self.clip_proj(img_clip_embeds)
+        tgt_emb = self.embedding(tgt_tokens)
+        if debug:
+            print("\nEmbedding do target (decoder input):\n", tgt_emb)
+
+        # [B, seq, 512], [B, 1, 512]
+        decoder_input = torch.cat([prefix_emb, tgt_emb], dim=1)  # [B, 1+T, hidden_size]
+
+        seq_len = decoder_input.size(1)
+        tgt_mask = self.generate_square_subsequent_mask(seq_len).to(decoder_input.device)
+
+        dec_out = self.transformer(src=decoder_input, tgt=decoder_input, tgt_mask=tgt_mask)
+
+        logits = self.out(dec_out) # -> [B, seq+1, vocab]
+        # logits = logits[:, 1:, :].contiguous()
+
+        if debug:
+            print("\nLogits finais sobre o vocabulário:\n", logits)
+
+        predicted_tokens = torch.argmax(F.log_softmax(logits, dim=-1), dim=-1)
+        return logits[:, 1:,:].contiguous(), predicted_tokens[:, 1:].contiguous()
+
+
+    def generate(self, img_clip_embeds, start_token_id, end_token_id, max_length=50):
+        """
+        Gera uma sequência autoregressivamente a partir dos embeddings do CLIP.
+        """
+        device = img_clip_embeds.device
+        batch_size = img_clip_embeds.size(0)
+
+        # Inicializa a sequência com o token de início
+        # generated = torch.zeros(
+        #     (batch_size, 1), dtype=torch.long, device=device
+        # )
+        generated = torch.full((batch_size, 1), start_token_id,
+                               dtype=torch.long, device=device)
+
+        prefix_emb = self.clip_proj(img_clip_embeds)
+        # generated = prefix_emb
+
+        for _ in range(max_length):
+            tgt_emb = self.embedding(generated)  # [B, T, H]
+            decoder_input = torch.cat([prefix_emb, tgt_emb], dim=1)
+
+            seq_len = decoder_input.size(1)
+            tgt_mask = self.generate_square_subsequent_mask(seq_len).to(device)
+
+            dec_out = self.transformer(src=decoder_input,
+                                       tgt=decoder_input,
+                                       tgt_mask=tgt_mask)
+            logits = self.out(dec_out)  # [B, T, vocab_size]
+            next_token_logits = logits[:, -1, :]  # Pega o último passo
+            next_token = torch.argmax(next_token_logits, dim=-1, keepdim=True)  # [B, 1]
+
+            # Adiciona o token predito à sequência
+            generated = torch.cat([generated, next_token], dim=1)
+
+            # Checa se todos os exemplos do batch terminaram
+            if torch.all(next_token.squeeze() == end_token_id):
+                break
+
+        return generated
+
+def load_custom_encoders():
+    # image_encoder
+    resnet18 = models.resnet18(pretrained=False)
+    image_encoder = nn.Sequential(
+        resnet18.conv1,
+        resnet18.bn1,
+        resnet18.relu,
+        resnet18.maxpool,
+        resnet18.layer1,
+        resnet18.layer2,
+        resnet18.layer3,
+        resnet18.layer4,
+        resnet18.avgpool
+    )
+    image_encoder.load_state_dict(torch.load('resnet18_text_encoder.pth'))  # Custom image encoder
+    image_encoder.eval()
+
+    text_encoder = AutoModel.from_pretrained('seismic_distilbert.pt')
+    return image_encoder, text_encoder
+
+def load_clip_model():
+    image_encoder, text_encoder = load_custom_encoders()
+    custom_clip_model = CustomCLIPModel(image_encoder, text_encoder)
+
+    return custom_clip_model
+

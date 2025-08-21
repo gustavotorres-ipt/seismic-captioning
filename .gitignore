@@ -1,0 +1,5 @@
+*.pth
+*.pt
+captions/
+images/
+__pycache__/
