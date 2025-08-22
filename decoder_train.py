@@ -10,14 +10,14 @@ from dataset import IMAGE_FOLDER, TEXT_FOLDER, load_datasets, read_captions_json
 from transformers import AutoTokenizer, AutoModel
 from model_loader import CustomCLIPModel, load_custom_encoders, CLIPDecoder
 from torchvision.transforms.functional import to_pil_image
+from torch.optim import lr_scheduler
 
 
-N_EPOCHS = 30
+N_EPOCHS = 40
 CUSTOM_CLIP_FILE = "customized_clip.pth"
 WEIGHTS_PATH = "decoder_model.pth"
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
-
 
 @torch.no_grad
 def tokenize_and_encode(caption, model, tokenizer):
@@ -45,7 +45,7 @@ def calc_clip_embedding(clip_encoder, img_input):
     return clip_embedding
 
 
-def run_train_epoch(clip_encoder, clip_decoder, tokenizer, train_loader):
+def run_train_epoch(clip_encoder, clip_decoder, tokenizer, train_loader, scheduler):
     total_loss = 0
 
     for image_batch, text_batch in tqdm(train_loader):
@@ -74,7 +74,9 @@ def run_train_epoch(clip_encoder, clip_decoder, tokenizer, train_loader):
 
         loss.backward()
         optimizer.step()
+
         optimizer.zero_grad()
+    scheduler.step()
 
     return total_loss / len(train_loader)
 
@@ -110,10 +112,7 @@ def run_val_epoch(clip_encoder, clip_decoder, tokenizer, val_loader):
 
 
 if __name__ == "__main__":
-
-
-    # Configurações
-    input_do_usuario = "A model with a fault to the east"
+    torch.manual_seed(0)
 
     clip_encoder, _, preprocess = open_clip.create_model_and_transforms(
         'ViT-B-32', pretrained='laion2b_s34b_b79k'
@@ -149,6 +148,7 @@ if __name__ == "__main__":
 
     criterion = nn.CrossEntropyLoss(ignore_index=tokenizer.pad_token_id)
     optimizer = torch.optim.AdamW(clip_decoder.parameters(), lr=1e-4)
+    scheduler = lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.1)
 
     if WEIGHTS_PATH in os.listdir("."):
         clip_decoder.load_state_dict(torch.load(WEIGHTS_PATH))
@@ -160,7 +160,7 @@ if __name__ == "__main__":
 
             # Treino
             avg_loss_train = run_train_epoch(
-                clip_encoder, clip_decoder, tokenizer, train_loader)
+                clip_encoder, clip_decoder, tokenizer, train_loader, scheduler)
             # Validação
             avg_loss_val = run_val_epoch(
                 clip_encoder, clip_decoder, tokenizer, val_loader)
@@ -201,3 +201,5 @@ if __name__ == "__main__":
             clip_embedding, start_token_id, end_token_id, max_length=50)
         reconstructed = tokenizer.decode(predicted_tokens[0], skip_special_tokens=True)
         print("Texto gerado:", reconstructed)
+
+

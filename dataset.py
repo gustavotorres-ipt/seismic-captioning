@@ -13,7 +13,7 @@ TEXT_FOLDER = "captions"
 def read_captions_json(file_path):
     with open(file_path) as f:
         captions = json.load(f)["captions"]
-        return random.choice(captions)
+        return captions[0] # random.choice(captions)
 
 def load_images(batch_size):
     image_paths = [os.path.join(IMAGE_FOLDER, filename)
@@ -29,7 +29,6 @@ def load_datasets(preprocess):
     print("Loading images and captions...")
     text_paths = sorted([os.path.join(TEXT_FOLDER, filename)
                   for filename in os.listdir(TEXT_FOLDER) ])
-    
     captions = [read_captions_json(path) for path in text_paths]
 
     train_dataset = CustomDataset(
