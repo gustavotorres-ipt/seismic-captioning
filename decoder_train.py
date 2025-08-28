@@ -6,7 +6,7 @@ import torch.nn.functional as F
 import open_clip
 from tqdm import tqdm
 from torch.utils.data import DataLoader
-from dataset import IMAGE_FOLDER, TEXT_FOLDER, load_datasets, read_captions_json
+from dataset import IMAGE_FOLDER, TEXT_FOLDER, load_datasets
 from transformers import AutoTokenizer, AutoModel
 from model_loader import CustomCLIPModel, load_custom_encoders, CLIPDecoder
 from torchvision.transforms.functional import to_pil_image
@@ -28,7 +28,7 @@ def tokenize_and_encode(caption, model, tokenizer):
     return model.encode_text(tokenized_captions)
 
 @torch.no_grad
-def encode_captions(dataset, model, tokenizer):
+def encode_captions_from_dataloader(dataset, model, tokenizer):
     text_embeddings = torch.stack(
         [tokenize_and_encode(c[1], model, tokenizer) for c in dataset]
     ).squeeze(1)
@@ -114,7 +114,7 @@ def run_val_epoch(clip_encoder, clip_decoder, tokenizer, val_loader):
 if __name__ == "__main__":
     torch.manual_seed(0)
 
-    clip_encoder, _, preprocess = open_clip.create_model_and_transforms(
+    _, _, preprocess = open_clip.create_model_and_transforms(
         'ViT-B-32', pretrained='laion2b_s34b_b79k'
     )
 
@@ -137,7 +137,7 @@ if __name__ == "__main__":
     vocab_size = tokenizer.vocab_size
 
     print("Encoding captions...")
-    encoded_captions = encode_captions(train_dataset, clip_encoder, tokenizer)
+    encoded_captions = encode_captions_from_dataloader(train_dataset, clip_encoder, tokenizer)
 
     # vocab_size, encoded_captions, hidden_size=512, num_heads=8, temperature=0.7
     clip_decoder = CLIPDecoder(
@@ -150,56 +150,19 @@ if __name__ == "__main__":
     optimizer = torch.optim.AdamW(clip_decoder.parameters(), lr=1e-4)
     scheduler = lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.1)
 
-    if WEIGHTS_PATH in os.listdir("."):
-        clip_decoder.load_state_dict(torch.load(WEIGHTS_PATH))
+    print("Training...")
+    for epoch in range(N_EPOCHS):
 
-    else:
+        # Treino
+        avg_loss_train = run_train_epoch(
+            clip_encoder, clip_decoder, tokenizer, train_loader, scheduler)
+        # Validação
+        avg_loss_val = run_val_epoch(
+            clip_encoder, clip_decoder, tokenizer, val_loader)
 
-        print("Training...")
-        for epoch in range(N_EPOCHS):
+        print(f"Epoch {epoch+1}, Training Loss: {avg_loss_train:.4f},",
+              f"Val loss: {avg_loss_val:.4f}")
 
-            # Treino
-            avg_loss_train = run_train_epoch(
-                clip_encoder, clip_decoder, tokenizer, train_loader, scheduler)
-            # Validação
-            avg_loss_val = run_val_epoch(
-                clip_encoder, clip_decoder, tokenizer, val_loader)
-
-            print(f"Epoch {epoch+1}, Training Loss: {avg_loss_train:.4f},",
-                  f"Val loss: {avg_loss_val:.4f}")
-
-        # Save the model's state_dict
-        torch.save(clip_decoder.state_dict(), WEIGHTS_PATH)
-        print(WEIGHTS_PATH, "saved.")
-
-    start_token_id = tokenizer.convert_tokens_to_ids("this")
-    #start_token_id = tokenizer.cls_token_id
-    end_token_id = tokenizer.sep_token_id
-
-    print("\n=== Geração de legenda ===")
-    with torch.no_grad():
-        test_sample = next(iter(test_loader))
-
-        idx_sample = random.randint(0, 31)
-        img_tensor = test_sample[0][idx_sample].to(device)
-
-        test_caption = test_sample[1][idx_sample]
-
-        # Show image
-        image = (
-            img_tensor       - img_tensor.min()) / (
-            img_tensor.max() - img_tensor.min()
-        )
-        image_pil = to_pil_image(image)
-        image_pil.show()
-
-        clip_embedding = calc_clip_embedding(clip_encoder, img_tensor.unsqueeze(0))
-
-        print("\nTexto original:", test_caption)
-
-        predicted_tokens = clip_decoder.generate(
-            clip_embedding, start_token_id, end_token_id, max_length=50)
-        reconstructed = tokenizer.decode(predicted_tokens[0], skip_special_tokens=True)
-        print("Texto gerado:", reconstructed)
-
-
+    # Save the model's state_dict
+    torch.save(clip_decoder.state_dict(), WEIGHTS_PATH)
+    print(WEIGHTS_PATH, "saved.")
