@@ -8,13 +8,9 @@ from dataset import IMAGE_FOLDER, TEXT_FOLDER, read_captions_json
 from transformers import AutoTokenizer
 from model_loader import CustomCLIPModel, load_custom_encoders, CLIPDecoder
 from decoder_train import tokenize_and_encode, calc_clip_embedding
+from config import CUSTOM_CLIP_FILE, WEIGHTS_PATH, device
 import argparse
 
-
-CUSTOM_CLIP_FILE = "customized_clip.pth"
-WEIGHTS_PATH = "decoder_model.pth"
-
-device = "cuda" if torch.cuda.is_available() else "cpu"
 
 @torch.no_grad
 def encode_captions(captions, model, tokenizer):

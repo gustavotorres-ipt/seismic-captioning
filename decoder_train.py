@@ -11,13 +11,8 @@ from transformers import AutoTokenizer, AutoModel
 from model_loader import CustomCLIPModel, load_custom_encoders, CLIPDecoder
 from torchvision.transforms.functional import to_pil_image
 from torch.optim import lr_scheduler
+from config import N_EPOCHS, CUSTOM_CLIP_FILE, WEIGHTS_PATH, device
 
-
-N_EPOCHS = 40
-CUSTOM_CLIP_FILE = "customized_clip.pth"
-WEIGHTS_PATH = "decoder_model.pth"
-
-device = "cuda" if torch.cuda.is_available() else "cpu"
 
 @torch.no_grad
 def tokenize_and_encode(caption, model, tokenizer):
