@@ -1,4 +1,5 @@
 import os
+import sys
 import random
 from decoder_train import calc_clip_embedding
 from PIL import Image
@@ -10,6 +11,64 @@ from model_loader import CustomCLIPModel, load_custom_encoders, CLIPDecoder
 from decoder_train import tokenize_and_encode, calc_clip_embedding
 from config import CUSTOM_CLIP_FILE, WEIGHTS_PATH, device
 import argparse
+import chromadb
+import numpy as np
+
+CHROMA_DB_FILE = "embeddings_sismicos"
+N_EMBEDS_BATCH = 4000
+
+def save_embeddings(captions, encoded_captions):
+    # Criar cliente local persistente
+    client = chromadb.PersistentClient(path=CHROMA_DB_FILE)
+
+    try:
+        # Criar coleção (sem embedding_function)
+        colecao = client.get_or_create_collection(name=CHROMA_DB_FILE)
+
+        embeddings = encoded_captions.tolist()  # CLIP ViT-B/32 -> 512 dim
+        if len(embeddings) == 0:
+            print("Error. Empty embeddings.")
+            sys.exit(1)
+
+        # Process in batches
+        for i in range(0, len(captions), N_EMBEDS_BATCH):
+            batch_captions = captions[i:i + N_EMBEDS_BATCH]
+            batch_embeddings = embeddings[i:i + N_EMBEDS_BATCH]
+            batch_ids = [f"cap{j}" for j in range(i, i + len(batch_captions))]
+
+            colecao.add(
+                documents=batch_captions,
+                embeddings=batch_embeddings,
+                ids=batch_ids
+            )
+
+        print("Captions saved in ChromaDB.")
+    except Exception as e:
+        print(e)
+        sys.exit(1)
+
+def recover_embeddings():
+    client = chromadb.PersistentClient(path=CHROMA_DB_FILE)
+
+    # Carregar a coleção
+    collection = client.get_collection(name=CHROMA_DB_FILE)
+
+    # Pegar tudo de uma vez
+    all_embeds = collection.get(
+        include=[ "embeddings"]  # você escolhe o que trazer
+    )
+    return all_embeds["embeddings"].astype(np.float32)
+
+def search_caption_embeds(captions, clip_encoder, tokenizer):
+    try:
+        print("Reading encoded captions...")
+        numpy_embeddings = recover_embeddings()
+        captions_embeddings = torch.from_numpy(numpy_embeddings)
+    except:
+        print("No caption embeddings found. Encoding captions...")
+        captions_embeddings = encode_captions(captions, clip_encoder, tokenizer)
+        save_embeddings(captions, captions_embeddings)
+    return captions_embeddings.to(device)
 
 
 @torch.no_grad
@@ -21,10 +80,10 @@ def encode_captions(captions, model, tokenizer):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser('Criador de volume de labels')
+    parser = argparse.ArgumentParser('Captioner for seismic images.')
 
     parser.add_argument('-i', '--input_image', type=str, required=True,
-                        help='Imagem utilizada para gerar legenda')
+                        help='Image used to generate caption.')
 
     args = parser.parse_args()
 
@@ -54,8 +113,8 @@ if __name__ == "__main__":
     captions = [read_captions_json(caption_file)
                 for caption_file in caption_files]
 
-    print("Encoding captions...")
-    encoded_captions = encode_captions(captions, clip_encoder, tokenizer)
+    # encoded_captions = encode_captions(captions, clip_encoder, tokenizer)
+    encoded_captions = search_caption_embeds(captions, clip_encoder, tokenizer)
 
     # vocab_size, encoded_captions, hidden_size=512, num_heads=8, temperature=0.7
     clip_decoder = CLIPDecoder(
@@ -67,7 +126,7 @@ if __name__ == "__main__":
     # start_token_id = tokenizer.cls_token_id
     end_token_id = tokenizer.sep_token_id
 
-    print("\n=== Geração de legenda ===")
+    print("Generating captions...")
 
     image = Image.open(args.input_image).convert("RGB")
     img_tensor = preprocess(image)
@@ -86,4 +145,4 @@ if __name__ == "__main__":
         predicted_tokens = clip_decoder.generate(
             clip_embedding, start_token_id, end_token_id, max_length=50)
         reconstructed = tokenizer.decode(predicted_tokens[0], skip_special_tokens=True)
-        print("Texto gerado:", reconstructed)
+        print("Final caption:", reconstructed)
