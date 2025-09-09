@@ -78,25 +78,41 @@ def encode_captions(captions, model, tokenizer):
     ).squeeze(1)
     return text_embeddings.to(device)
 
+def generate_caption(image, tokenizer, clip_encoder, clip_decoder, transform):
+    # start_token_id = tokenizer.convert_tokens_to_ids("this")
+    start_token_id = tokenizer.cls_token_id
+    end_token_id = tokenizer.sep_token_id
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser('Captioner for seismic images.')
+    print("Generating captions...")
 
-    parser.add_argument('-i', '--input_image', type=str, required=True,
-                        help='Image used to generate caption.')
+    img_tensor = transform(image)
 
-    args = parser.parse_args()
+    with torch.no_grad():
+        img_tensor = img_tensor.to(device)
 
+        # Show image
+        img_tensor = (
+            img_tensor       - img_tensor.min()) / (
+            img_tensor.max() - img_tensor.min())
+
+        clip_embedding = calc_clip_embedding(clip_encoder, img_tensor.unsqueeze(0))
+
+        predicted_tokens = clip_decoder.generate(
+            clip_embedding, start_token_id, end_token_id, max_length=50)
+        reconstructed = tokenizer.decode(predicted_tokens[0], skip_special_tokens=True)
+        return reconstructed
+
+def load_encoder_and_decoder():
     torch.manual_seed(0)
+
     _, _, preprocess = open_clip.create_model_and_transforms(
         'ViT-B-32', pretrained='laion2b_s34b_b79k'
     )
 
-    print("Tokenizing words...")
+    print("Loading models...")
     tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
     tokenizer.add_special_tokens({'pad_token': '[PAD]'})
 
-    print("Loading model...")
     image_encoder, text_encoder = load_custom_encoders()
     clip_encoder = CustomCLIPModel(image_encoder, text_encoder)
     clip_encoder.load_state_dict(torch.load(CUSTOM_CLIP_FILE))
@@ -113,7 +129,6 @@ if __name__ == "__main__":
     captions = [read_captions_json(caption_file)
                 for caption_file in caption_files]
 
-    # encoded_captions = encode_captions(captions, clip_encoder, tokenizer)
     encoded_captions = search_caption_embeds(captions, clip_encoder, tokenizer)
 
     # vocab_size, encoded_captions, hidden_size=512, num_heads=8, temperature=0.7
@@ -121,28 +136,22 @@ if __name__ == "__main__":
         vocab_size, encoded_captions, temperature=clip_encoder.logit_scale
     ).to(device)
     clip_decoder.load_state_dict(torch.load(WEIGHTS_PATH))
+    return tokenizer, clip_encoder, clip_decoder, preprocess
 
-    start_token_id = tokenizer.convert_tokens_to_ids("this")
-    # start_token_id = tokenizer.cls_token_id
-    end_token_id = tokenizer.sep_token_id
 
-    print("Generating captions...")
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser('Captioner for seismic images.')
+
+    parser.add_argument('-i', '--input_image', type=str, required=True,
+                        help='Image used to generate caption.')
+
+    args = parser.parse_args()
+
+    tokenizer, clip_encoder, clip_decoder, preprocess = load_encoder_and_decoder()
 
     image = Image.open(args.input_image).convert("RGB")
-    img_tensor = preprocess(image)
+    final_caption = generate_caption(
+        image, tokenizer, clip_encoder, clip_decoder, preprocess)
 
-    with torch.no_grad():
-        img_tensor = img_tensor.to(device)
-
-        # Show image
-        img_tensor = (
-            img_tensor       - img_tensor.min()) / (
-            img_tensor.max() - img_tensor.min())
-        image.show()
-
-        clip_embedding = calc_clip_embedding(clip_encoder, img_tensor.unsqueeze(0))
-
-        predicted_tokens = clip_decoder.generate(
-            clip_embedding, start_token_id, end_token_id, max_length=50)
-        reconstructed = tokenizer.decode(predicted_tokens[0], skip_special_tokens=True)
-        print("Final caption:", reconstructed)
+    print("Final caption:", final_caption)
+    image.show()
