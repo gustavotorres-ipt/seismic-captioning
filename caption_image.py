@@ -1,21 +1,22 @@
 import os
 import sys
 import random
+import numpy as np
+import chromadb
 from decoder_train import calc_clip_embedding
 from PIL import Image
 import torch
 import open_clip
-from dataset import IMAGE_FOLDER, TEXT_FOLDER, read_captions_json
+from dataset import TEXT_FOLDER, read_captions_json
 from transformers import AutoTokenizer
 from model_loader import CustomCLIPModel, load_custom_encoders, CLIPDecoder
 from decoder_train import tokenize_and_encode, calc_clip_embedding
-from config import CUSTOM_CLIP_FILE, WEIGHTS_PATH, device
+from config import CUSTOM_CLIP_FILE, WEIGHTS_PATH, device, CHROMA_DB_FILE, N_EMBEDS_BATCH
 import argparse
-import chromadb
-import numpy as np
-
-CHROMA_DB_FILE = "embeddings_sismicos"
-N_EMBEDS_BATCH = 4000
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QFileDialog
+)
+from PyQt5.QtGui import QPixmap
 
 def save_embeddings(captions, encoded_captions):
     # Criar cliente local persistente
@@ -54,9 +55,7 @@ def recover_embeddings():
     collection = client.get_collection(name=CHROMA_DB_FILE)
 
     # Pegar tudo de uma vez
-    all_embeds = collection.get(
-        include=[ "embeddings"]  # você escolhe o que trazer
-    )
+    all_embeds = collection.get( include=[ "embeddings"])
     return all_embeds["embeddings"].astype(np.float32)
 
 def search_caption_embeds(captions, clip_encoder, tokenizer):
@@ -149,9 +148,9 @@ if __name__ == "__main__":
 
     tokenizer, clip_encoder, clip_decoder, preprocess = load_encoder_and_decoder()
 
-    image = Image.open(args.input_image).convert("RGB")
-    final_caption = generate_caption(
-        image, tokenizer, clip_encoder, clip_decoder, preprocess)
-
-    print("Final caption:", final_caption)
-    image.show()
+    #image = Image.open(args.input_image).convert("RGB")
+    #final_caption = generate_caption(
+    #    image, tokenizer, clip_encoder, clip_decoder, preprocess
+    #)
+    #print("Final caption:", final_caption)
+    #image.show()
