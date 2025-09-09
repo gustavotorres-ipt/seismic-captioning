@@ -148,9 +148,9 @@ if __name__ == "__main__":
 
     tokenizer, clip_encoder, clip_decoder, preprocess = load_encoder_and_decoder()
 
-    #image = Image.open(args.input_image).convert("RGB")
-    #final_caption = generate_caption(
-    #    image, tokenizer, clip_encoder, clip_decoder, preprocess
-    #)
-    #print("Final caption:", final_caption)
-    #image.show()
+    image = Image.open(args.input_image).convert("RGB")
+    final_caption = generate_caption(
+        image, tokenizer, clip_encoder, clip_decoder, preprocess
+    )
+    print("Final caption:", final_caption)
+    image.show()
