@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we observe here a section. It has a compressional fault.",
+        "this depicts a model with a movement of high frequency and high noise.",
+        "we see here a sesimic section of a compressional fault dipping east."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_high_noise"
+    ]
+}

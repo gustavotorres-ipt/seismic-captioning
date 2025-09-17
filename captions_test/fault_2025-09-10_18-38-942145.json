@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this depicts a subsurface representation with a fault. It has low frequency and high noise.",
+        "this depicts a seismic model of a dip-slip fault dipping right."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

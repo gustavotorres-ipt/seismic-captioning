@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this depicts a subsurface representation. It is a geologic rigid deformation dipping west.",
+        "a seismic image. It is a structural deformation dipping left with low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

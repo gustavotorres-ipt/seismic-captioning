@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this image represents a subsurface representation. It is a geologic rigid deformation dipping east with high frequency and low noise.",
+        "we see here a sesimic section of a tectonic deformation.",
+        "this image demonstrates a section. It is a structural deformation with high frequency and low noise.",
+        "this depicts a sesimic section with a geologic rigid deformation of high frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_low_noise"
+    ]
+}

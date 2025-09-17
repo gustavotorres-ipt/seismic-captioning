@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "we observe here a subsurface model. It is a movement with high frequency and low noise.",
+        "this depicts a model. It is a reverse fault dipping west. It is high frequency and low noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_high_frequency_low_noise"
+    ]
+}

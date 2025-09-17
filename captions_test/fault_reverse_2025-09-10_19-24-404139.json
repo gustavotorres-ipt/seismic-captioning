@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image represents a seismic model of a compressional structural fault.",
+        "this image represents a model. It has a reverse fault with high frequency and high noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_high_frequency_high_noise"
+    ]
+}

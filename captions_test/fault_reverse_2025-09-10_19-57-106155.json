@@ -1,0 +1,13 @@
+{
+    "captions": [
+        "this image represents a sesimic section. It has a compressional fault dipping right.",
+        "a 2D section with a compressional structural fault dipping east.",
+        "this image demonstrates a model with a compressional structural fault dipping east.",
+        "this image demonstrates a subsurface model with a compressional tectonic settings dipping right. It has low frequency and low noise.",
+        "this image represents a subsurface representation. It is a reverse fault.",
+        "this depicts a 2D section. It is a downward tectonic."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_low_frequency_low_noise"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "captions": [
+        "we see here a 2D subsurface model. It has a movement dipping left of low frequency and low noise.",
+        "we observe here a 2D subsurface model. It has a compressional tectonic settings dipping west with low frequency and low noise.",
+        "we see here a 2D section with a reverse-slip fault. It is low frequency and low noise.",
+        "we see here a subsurface model with a movement with low frequency and low noise.",
+        "we see here a sesimic section with a reverse-slip fault dipping west.",
+        "we see here a section of a compressional structural fault with low frequency and low noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_low_frequency_low_noise"
+    ]
+}

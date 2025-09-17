@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this depicts a seismic model of a tectonic deformation dipping west with high frequency and high noise.",
+        "we observe here a seismic image. It has a horizons displacement along fault. It is high frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_high_noise"
+    ]
+}

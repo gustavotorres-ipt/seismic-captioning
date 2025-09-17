@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "a section of a horizons displacement along fault dipping left.",
+        "this image represents a subsurface model with a tectonic fault dipping west.",
+        "a seismic image. It is a horizons displacement along fault dipping west.",
+        "this image demonstrates a section of a tectonic fault dipping left."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

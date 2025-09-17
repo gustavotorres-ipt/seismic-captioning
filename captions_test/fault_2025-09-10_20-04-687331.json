@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this depicts a model of a structural deformation with low frequency and high noise.",
+        "a seismic model of a rigid deformation known or fault dipping right.",
+        "a seismic image of a tectonic deformation.",
+        "a seismic image. It has a tectonic fault with low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "a section with a horizons displacement along fault.",
+        "this image demonstrates a section of a tectonic fault dipping left with high frequency and low noise.",
+        "we observe here a section. It is a tectonic deformation."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

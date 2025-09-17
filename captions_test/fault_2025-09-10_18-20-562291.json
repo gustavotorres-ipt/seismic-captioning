@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image represents a seismic image. It is a rigid deformation known or fault. It has low frequency and low noise.",
+        "this image demonstrates a subsurface model with a fault with low frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_low_noise"
+    ]
+}

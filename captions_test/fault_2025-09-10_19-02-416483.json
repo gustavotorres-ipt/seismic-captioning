@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "a section of a fault with high frequency and high noise.",
+        "we observe here a 2D subsurface model of a structural deformation. It is high frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_high_noise"
+    ]
+}

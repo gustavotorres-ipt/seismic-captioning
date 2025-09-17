@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we see here a section. It has a structural discontinuity with high frequency and low noise.",
+        "we see here a seismic model of a structural deformation dipping west.",
+        "a 2D subsurface model with a geologic rigid deformation."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this depicts a 2D subsurface model. It has a reverse tectonics.",
+        "we observe here a section. It has a reverse-slip fault dipping right. It is high frequency and high noise.",
+        "we observe here a sesimic section. It has a reverse fault with high frequency and high noise.",
+        "a seismic model with a downward tectonic dipping east."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_high_noise"
+    ]
+}

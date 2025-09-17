@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "we see here a 2D section. It has a horizons displacement along fault dipping west. It is high frequency and low noise.",
+        "we observe here a 2D section. It is a tectonic fault."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

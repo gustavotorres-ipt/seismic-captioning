@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "a model with a tectonic fault.",
+        "we see here a model with a rigid deformation known or fault. It is low frequency and low noise.",
+        "this depicts a subsurface model of a structural deformation dipping left."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_low_noise"
+    ]
+}

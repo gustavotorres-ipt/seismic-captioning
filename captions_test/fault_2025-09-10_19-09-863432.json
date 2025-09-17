@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we see here a seismic model. It has a structural discontinuity dipping left of high frequency and low noise.",
+        "this image demonstrates a 2D section of a dip-slip fault dipping west.",
+        "we see here a seismic image of a fault dipping west of high frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

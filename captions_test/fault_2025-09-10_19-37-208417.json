@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this depicts a 2D seismic model. It is a dip-slip fault of high frequency and high noise.",
+        "this image represents a seismic model. It has a geologic rigid deformation dipping right.",
+        "this image represents a sesimic section of a structural deformation.",
+        "this image represents a sesimic section with a fault. It is high frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_high_noise"
+    ]
+}

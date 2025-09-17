@@ -1,0 +1,12 @@
+{
+    "captions": [
+        "a 2D seismic model. It is a compressional structural fault of high frequency and low noise.",
+        "we see here a 2D seismic model of a reverse-slip fault. It is high frequency and low noise.",
+        "we see here a 2D subsurface model of a reverse fault. It is high frequency and low noise.",
+        "this depicts a seismic model. It is a reverse fault dipping right.",
+        "we observe here a sesimic section. It has a reverse-slip fault dipping right. It has high frequency and low noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_low_noise"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "a 2D seismic model of a geologic rigid deformation dipping left.",
+        "this depicts a subsurface representation. It is a tectonic fault. It has low frequency and high noise.",
+        "a seismic image. It is a geologic rigid deformation."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

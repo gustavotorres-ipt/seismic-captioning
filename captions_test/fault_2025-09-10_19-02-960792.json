@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "a seismic image of a rigid deformation known or fault of high frequency and high noise.",
+        "we see here a 2D subsurface model with a structural discontinuity dipping right."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_high_noise"
+    ]
+}

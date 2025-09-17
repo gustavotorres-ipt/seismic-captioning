@@ -1,0 +1,12 @@
+{
+    "captions": [
+        "we observe here a sesimic section. It has a horizons displacement along fault dipping right.",
+        "we see here a 2D subsurface model with a geologic rigid deformation dipping right with high frequency and high noise.",
+        "this image demonstrates a subsurface representation. It has a geologic rigid deformation.",
+        "a seismic image of a tectonic deformation dipping right.",
+        "this image demonstrates a section. It is a tectonic deformation."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_high_noise"
+    ]
+}

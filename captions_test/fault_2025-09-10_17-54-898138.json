@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this depicts a sesimic section. It is a rigid deformation known or fault dipping right. It has high frequency and low noise.",
+        "a subsurface model with a tectonic fault.",
+        "this depicts a section. It has a fault."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_low_noise"
+    ]
+}

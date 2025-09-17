@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this depicts a subsurface model. It is a geologic rigid deformation. It has high frequency and low noise.",
+        "this image represents a subsurface model. It is a structural discontinuity.",
+        "this image demonstrates a 2D section of a dip-slip fault with high frequency and low noise.",
+        "we see here a section with a rigid deformation known or fault."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_low_noise"
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "captions": [
+        "a section with a dip-slip fault dipping right. It is low frequency and low noise.",
+        "we observe here a subsurface representation. It has a horizons displacement along fault with low frequency and low noise.",
+        "this image demonstrates a 2D section. It has a dip-slip fault dipping east.",
+        "this image represents a 2D subsurface model of a structural deformation. It is low frequency and low noise.",
+        "we observe here a 2D subsurface model of a structural discontinuity. It has low frequency and low noise.",
+        "this image represents a 2D section. It is a fault dipping right.",
+        "this depicts a sesimic section of a structural discontinuity of low frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_low_noise"
+    ]
+}

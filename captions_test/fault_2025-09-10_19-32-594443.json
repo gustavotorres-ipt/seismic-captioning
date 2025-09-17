@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this depicts a seismic model of a geologic rigid deformation dipping west with low frequency and low noise.",
+        "we observe here a 2D seismic model. It has a dip-slip fault dipping left."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_low_noise"
+    ]
+}

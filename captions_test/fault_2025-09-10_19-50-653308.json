@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this depicts a model of a rigid deformation known or fault. It has high frequency and low noise.",
+        "a sesimic section of a dip-slip fault dipping west.",
+        "we see here a seismic model with a rigid deformation known or fault dipping left."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

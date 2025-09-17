@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this image demonstrates a 2D subsurface model with a tectonic fault.",
+        "this image represents a seismic image. It is a tectonic fault.",
+        "this image demonstrates a subsurface representation. It has a tectonic deformation dipping east."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_low_noise"
+    ]
+}

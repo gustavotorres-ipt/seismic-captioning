@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "a 2D section. It is a reverse fault dipping east.",
+        "this image represents a subsurface representation. It has a reverse-slip fault."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_low_noise"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image demonstrates a 2D section. It is a tectonic deformation.",
+        "we observe here a sesimic section with a fault."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this image demonstrates a 2D section with a compressional tectonics dipping west.",
+        "we observe here a sesimic section of a reverse tectonics.",
+        "a 2D section. It has a reverse tectonics dipping west."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_high_frequency_low_noise"
+    ]
+}

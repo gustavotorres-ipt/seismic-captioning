@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "a section with a geologic rigid deformation dipping east.",
+        "a model. It has a fault."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

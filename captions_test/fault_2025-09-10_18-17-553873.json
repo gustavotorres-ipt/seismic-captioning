@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this image represents a subsurface model. It is a dip-slip fault.",
+        "a subsurface representation with a structural deformation.",
+        "this image represents a seismic image of a horizons displacement along fault dipping left."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_high_noise"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "a 2D seismic model. It is a tectonic deformation dipping west.",
+        "a seismic model. It is a horizons displacement along fault.",
+        "this depicts a subsurface representation. It is a structural deformation with high frequency and low noise.",
+        "we see here a subsurface representation. It has a tectonic fault."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

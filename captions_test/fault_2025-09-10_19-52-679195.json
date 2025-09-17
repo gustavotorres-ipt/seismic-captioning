@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "we see here a sesimic section. It is a rigid deformation known or fault dipping east.",
+        "a model. It is a dip-slip fault.",
+        "we see here a section. It has a structural discontinuity.",
+        "this image represents a sesimic section of a structural deformation dipping right."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_low_noise"
+    ]
+}

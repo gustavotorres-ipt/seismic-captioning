@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "we see here a 2D section. It is a movement with low frequency and high noise.",
+        "a seismic image of a reverse tectonics dipping left of low frequency and high noise.",
+        "this depicts a model. It has a reverse tectonics dipping west. It has low frequency and high noise.",
+        "this image represents a seismic model with a movement."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_low_frequency_high_noise"
+    ]
+}

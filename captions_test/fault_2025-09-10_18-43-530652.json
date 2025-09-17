@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this depicts a section of a tectonic fault dipping right.",
+        "we observe here a 2D seismic model. It is a structural discontinuity dipping right of high frequency and high noise.",
+        "this image demonstrates a subsurface model. It is a structural deformation dipping right. It is high frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_high_noise"
+    ]
+}

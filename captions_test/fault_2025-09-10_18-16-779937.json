@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image demonstrates a section. It is a structural deformation with high frequency and high noise.",
+        "this image represents a sesimic section of a structural discontinuity."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_high_noise"
+    ]
+}

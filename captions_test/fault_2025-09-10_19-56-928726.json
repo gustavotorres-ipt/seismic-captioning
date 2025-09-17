@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "we observe here a 2D seismic model. It is a structural deformation.",
+        "we observe here a sesimic section. It has a rigid deformation known or fault of high frequency and low noise.",
+        "this image demonstrates a 2D subsurface model. It is a dip-slip fault dipping west. It is high frequency and low noise.",
+        "a 2D section. It has a rigid deformation known or fault."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

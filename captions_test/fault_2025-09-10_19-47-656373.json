@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "we observe here a seismic image of a tectonic fault of high frequency and high noise.",
+        "we see here a 2D subsurface model of a tectonic deformation dipping left."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_high_noise"
+    ]
+}

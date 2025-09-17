@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "a subsurface representation. It is a tectonic fault dipping east.",
+        "a 2D section of a geologic rigid deformation dipping right with low frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_low_noise"
+    ]
+}

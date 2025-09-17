@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "a 2D subsurface model of a compressional tectonic settings dipping right.",
+        "this depicts a seismic image. It has a compressional tectonic settings dipping east.",
+        "we observe here a 2D section. It has a reverse tectonics dipping right."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_high_noise"
+    ]
+}

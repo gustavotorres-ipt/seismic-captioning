@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this image represents a subsurface representation. It has a downward tectonic. It is high frequency and low noise.",
+        "this image represents a sesimic section with a compressional tectonics dipping west.",
+        "this depicts a section. It has a compressional tectonic settings dipping left. It is high frequency and low noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_high_frequency_low_noise"
+    ]
+}

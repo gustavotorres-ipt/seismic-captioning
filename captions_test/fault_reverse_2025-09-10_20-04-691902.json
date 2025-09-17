@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image demonstrates a section of a reverse tectonics dipping right.",
+        "we observe here a seismic image of a compressional structural fault dipping east. It has high frequency and high noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_high_noise"
+    ]
+}

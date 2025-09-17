@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "a section. It is a reverse tectonics dipping west.",
+        "we observe here a section with a downward tectonic.",
+        "this depicts a section. It is a compressional tectonic settings.",
+        "we see here a seismic model with a downward tectonic dipping left of low frequency and high noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_low_frequency_high_noise"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "captions": [
+        "this image demonstrates a seismic model with a horizons displacement along fault of high frequency and high noise.",
+        "this image represents a 2D section. It is a rigid deformation known or fault dipping east with high frequency and high noise.",
+        "we observe here a subsurface representation. It is a rigid deformation known or fault dipping east.",
+        "we observe here a subsurface model with a tectonic fault dipping right.",
+        "this depicts a model of a horizons displacement along fault dipping east."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_high_noise"
+    ]
+}

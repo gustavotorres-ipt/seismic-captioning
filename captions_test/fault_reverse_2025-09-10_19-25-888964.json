@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we see here a subsurface representation of a movement of high frequency and low noise.",
+        "this image represents a 2D seismic model. It has a reverse fault of high frequency and low noise.",
+        "a subsurface model of a downward tectonic dipping west."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_high_frequency_low_noise"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we see here a section with a geologic rigid deformation of low frequency and high noise.",
+        "this image represents a sesimic section with a fault dipping right. It is low frequency and high noise.",
+        "this image demonstrates a model with a horizons displacement along fault dipping right. It has low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we observe here a 2D section with a dip-slip fault dipping east.",
+        "we see here a section of a dip-slip fault dipping right.",
+        "we observe here a subsurface representation with a tectonic deformation dipping right."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

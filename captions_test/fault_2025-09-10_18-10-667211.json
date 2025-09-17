@@ -1,0 +1,13 @@
+{
+    "captions": [
+        "we observe here a subsurface representation. It is a structural deformation.",
+        "this image represents a section. It has a structural deformation dipping west with low frequency and high noise.",
+        "this image demonstrates a seismic model with a fault dipping west.",
+        "we see here a section. It has a tectonic fault. It has low frequency and high noise.",
+        "this depicts a section. It has a tectonic deformation.",
+        "this image demonstrates a model of a fault."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

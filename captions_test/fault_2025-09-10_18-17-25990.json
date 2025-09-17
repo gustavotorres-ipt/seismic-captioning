@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we see here a sesimic section of a tectonic fault dipping right. It has low frequency and low noise.",
+        "this image represents a 2D section. It is a horizons displacement along fault of low frequency and low noise.",
+        "a subsurface representation of a tectonic deformation dipping east."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_low_noise"
+    ]
+}

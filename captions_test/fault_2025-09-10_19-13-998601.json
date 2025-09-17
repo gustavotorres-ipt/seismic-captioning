@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "we see here a seismic image. It has a geologic rigid deformation.",
+        "a seismic image with a tectonic fault dipping east.",
+        "this image demonstrates a 2D seismic model of a geologic rigid deformation.",
+        "this depicts a seismic model with a fault."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_low_noise"
+    ]
+}

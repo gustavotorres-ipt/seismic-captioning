@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "a seismic model. It has a tectonic fault.",
+        "a model. It has a dip-slip fault dipping east."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_low_noise"
+    ]
+}

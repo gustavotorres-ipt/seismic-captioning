@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we see here a model with a movement of low frequency and high noise.",
+        "this depicts a sesimic section. It has a reverse tectonics dipping right.",
+        "this image demonstrates a subsurface representation. It is a compressional structural fault."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_low_frequency_high_noise"
+    ]
+}

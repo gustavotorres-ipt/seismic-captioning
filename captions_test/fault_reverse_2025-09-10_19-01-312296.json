@@ -1,0 +1,12 @@
+{
+    "captions": [
+        "we observe here a seismic model. It is a reverse tectonics dipping east.",
+        "this depicts a 2D section. It is a downward tectonic.",
+        "we observe here a 2D seismic model. It is a compressional fault.",
+        "we see here a seismic model. It has a compressional tectonic settings. It is high frequency and high noise.",
+        "this depicts a model. It is a compressional tectonic settings."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_high_noise"
+    ]
+}

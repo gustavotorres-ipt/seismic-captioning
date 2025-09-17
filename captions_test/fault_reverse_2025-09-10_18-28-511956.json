@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "a sesimic section. It has a compressional structural fault dipping east.",
+        "this image demonstrates a 2D section. It is a movement dipping east."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_low_frequency_high_noise"
+    ]
+}

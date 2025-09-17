@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this image represents a subsurface representation with a downward tectonic.",
+        "this image represents a seismic image with a compressional structural fault.",
+        "this image demonstrates a model. It has a downward tectonic of low frequency and low noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_low_frequency_low_noise"
+    ]
+}

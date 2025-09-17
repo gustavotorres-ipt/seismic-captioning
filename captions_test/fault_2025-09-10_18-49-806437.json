@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we see here a subsurface representation. It has a horizons displacement along fault dipping left.",
+        "a subsurface model with a horizons displacement along fault. It is low frequency and high noise.",
+        "this image demonstrates a seismic image with a dip-slip fault dipping left."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

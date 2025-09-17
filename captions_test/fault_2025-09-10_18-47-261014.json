@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this image demonstrates a model of a dip-slip fault. It has low frequency and high noise.",
+        "this depicts a seismic image. It is a fault dipping left of low frequency and high noise.",
+        "this depicts a subsurface model with a dip-slip fault.",
+        "a seismic image. It has a rigid deformation known or fault."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

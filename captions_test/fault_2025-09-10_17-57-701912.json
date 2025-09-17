@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this depicts a 2D section with a structural deformation dipping west of low frequency and high noise.",
+        "we see here a section of a rigid deformation known or fault with low frequency and high noise.",
+        "this image represents a subsurface model of a rigid deformation known or fault."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

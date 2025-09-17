@@ -1,0 +1,13 @@
+{
+    "captions": [
+        "we see here a sesimic section. It is a reverse tectonics.",
+        "this depicts a section. It has a downward tectonic.",
+        "this depicts a sesimic section with a compressional fault dipping east.",
+        "this image demonstrates a seismic model. It is a compressional fault with low frequency and low noise.",
+        "a 2D section of a compressional structural fault. It has low frequency and low noise.",
+        "this depicts a seismic image of a compressional tectonic settings."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_low_frequency_low_noise"
+    ]
+}

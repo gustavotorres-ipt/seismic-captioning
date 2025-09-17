@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this image represents a model with a fault.",
+        "this image demonstrates a subsurface model with a tectonic deformation dipping east.",
+        "we observe here a model of a rigid deformation known or fault dipping east.",
+        "we see here a 2D section with a structural deformation with low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

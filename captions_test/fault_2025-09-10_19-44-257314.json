@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "a sesimic section with a horizons displacement along fault.",
+        "this depicts a seismic image of a horizons displacement along fault dipping west with low frequency and high noise.",
+        "we see here a section. It has a dip-slip fault dipping west of low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

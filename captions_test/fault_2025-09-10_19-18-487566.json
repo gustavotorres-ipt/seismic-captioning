@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image demonstrates a sesimic section. It is a dip-slip fault dipping west. It has high frequency and low noise.",
+        "we see here a seismic image of a rigid deformation known or fault dipping left with high frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

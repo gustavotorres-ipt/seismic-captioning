@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "a 2D subsurface model with a horizons displacement along fault with low frequency and high noise.",
+        "we observe here a sesimic section of a dip-slip fault. It is low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

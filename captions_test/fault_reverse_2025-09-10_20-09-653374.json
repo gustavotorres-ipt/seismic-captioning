@@ -1,0 +1,14 @@
+{
+    "captions": [
+        "we see here a model. It is a movement with low frequency and high noise.",
+        "we see here a seismic image with a reverse-slip fault dipping west with low frequency and high noise.",
+        "we see here a section. It has a reverse-slip fault. It is low frequency and high noise.",
+        "we see here a subsurface representation with a reverse-slip fault.",
+        "this image represents a subsurface model. It is a downward tectonic dipping west. It is low frequency and high noise.",
+        "we see here a subsurface model with a movement dipping west. It has low frequency and high noise.",
+        "this image demonstrates a model with a compressional fault. It is low frequency and high noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_low_frequency_high_noise"
+    ]
+}

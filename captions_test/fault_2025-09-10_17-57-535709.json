@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "we see here a subsurface model. It is a structural deformation. It has high frequency and high noise.",
+        "a subsurface model. It is a horizons displacement along fault.",
+        "this image represents a 2D subsurface model of a geologic rigid deformation.",
+        "this image represents a sesimic section. It has a structural deformation."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_high_noise"
+    ]
+}

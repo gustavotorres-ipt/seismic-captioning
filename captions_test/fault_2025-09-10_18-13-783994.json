@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image demonstrates a seismic image. It has a geologic rigid deformation dipping west of low frequency and high noise.",
+        "we see here a subsurface model. It has a geologic rigid deformation dipping west with low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

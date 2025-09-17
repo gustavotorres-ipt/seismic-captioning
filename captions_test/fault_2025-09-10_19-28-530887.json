@@ -1,0 +1,12 @@
+{
+    "captions": [
+        "this depicts a seismic image. It is a structural discontinuity dipping left. It has high frequency and high noise.",
+        "this depicts a seismic model. It has a dip-slip fault dipping left.",
+        "a seismic model. It has a structural discontinuity.",
+        "we observe here a subsurface model of a tectonic fault.",
+        "a subsurface representation of a rigid deformation known or fault. It is high frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_high_noise"
+    ]
+}

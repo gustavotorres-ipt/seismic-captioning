@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this image represents a 2D section. It has a reverse fault of high frequency and high noise.",
+        "this depicts a 2D section of a compressional tectonic settings dipping west. It has high frequency and high noise.",
+        "we see here a sesimic section. It has a reverse-slip fault dipping west. It is high frequency and high noise.",
+        "this depicts a 2D subsurface model of a downward tectonic dipping left."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_high_frequency_high_noise"
+    ]
+}

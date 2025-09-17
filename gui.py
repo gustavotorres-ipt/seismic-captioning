@@ -9,7 +9,7 @@ from config import CUSTOM_CLIP_FILE, WEIGHTS_PATH, device, CHROMA_DB_FILE, N_EMB
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QPushButton, QVBoxLayout, QFileDialog
 )
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import QPixmap, QFont
 from generator_caption import CaptionGenerator
 from caption_image import load_encoder_and_decoder
 
@@ -59,15 +59,20 @@ class ImageCaptionApp(QWidget):
 
         self.setWindowTitle("Exibição de Imagem Sísmica com Legenda")
         self.setGeometry(200, 200, 600, 400)
+        font = QFont("Arial", 14)
 
         # Widgets
         self.image_label = QLabel("Nenhuma imagem carregada")
         self.image_label.setScaledContents(True)
+        self.image_label.setFont(font)
 
         self.caption_label = QLabel("Legenda aparecerá aqui")
         self.caption_label.setWordWrap(True)
 
+        self.caption_label.setFont(font)
+
         self.load_button = QPushButton("Carregar Imagem")
+        self.load_button.setFont(font)
 
         # Layout
         layout = QVBoxLayout()

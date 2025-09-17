@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image represents a 2D subsurface model. It is a geologic rigid deformation.",
+        "a model of a fault. It is low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

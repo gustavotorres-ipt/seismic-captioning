@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "a subsurface representation. It is a compressional tectonics.",
+        "we observe here a subsurface representation of a downward tectonic dipping east. It is high frequency and low noise.",
+        "this image demonstrates a subsurface representation with a movement dipping right of high frequency and low noise.",
+        "a subsurface model with a reverse-slip fault."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_low_noise"
+    ]
+}

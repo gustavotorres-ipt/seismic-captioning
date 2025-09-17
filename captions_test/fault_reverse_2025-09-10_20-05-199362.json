@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this depicts a sesimic section with a reverse fault dipping left.",
+        "we see here a seismic image of a downward tectonic. It has high frequency and low noise.",
+        "we see here a section with a compressional tectonics dipping left with high frequency and low noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_high_frequency_low_noise"
+    ]
+}

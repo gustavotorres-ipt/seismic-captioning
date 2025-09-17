@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "this image demonstrates a 2D section with a compressional tectonics. It is low frequency and low noise.",
+        "this depicts a seismic image of a reverse-slip fault with low frequency and low noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_low_frequency_low_noise"
+    ]
+}

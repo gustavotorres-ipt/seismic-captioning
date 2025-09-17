@@ -1,0 +1,9 @@
+{
+    "captions": [
+        "we observe here a 2D subsurface model. It has a rigid deformation known or fault dipping right. It is low frequency and low noise.",
+        "a 2D subsurface model with a tectonic fault dipping east. It has low frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_low_noise"
+    ]
+}

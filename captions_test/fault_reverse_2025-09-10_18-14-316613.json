@@ -1,0 +1,12 @@
+{
+    "captions": [
+        "this depicts a section. It is a downward tectonic dipping west of low frequency and high noise.",
+        "we see here a sesimic section. It has a movement dipping left.",
+        "this depicts a 2D seismic model of a compressional structural fault dipping west.",
+        "we observe here a 2D subsurface model with a compressional tectonics.",
+        "this image represents a seismic image. It has a compressional fault."
+    ],
+    "labels": [
+        "fault_reverse_dipping_west_low_frequency_high_noise"
+    ]
+}

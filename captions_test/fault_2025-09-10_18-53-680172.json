@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this image demonstrates a section. It is a tectonic fault dipping west with high frequency and high noise.",
+        "we see here a seismic image. It has a tectonic deformation.",
+        "this depicts a sesimic section. It is a rigid deformation known or fault dipping west."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_high_noise"
+    ]
+}

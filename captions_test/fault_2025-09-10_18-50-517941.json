@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "this depicts a subsurface representation with a dip-slip fault dipping left.",
+        "we observe here a 2D section with a tectonic deformation.",
+        "this image demonstrates a subsurface model. It has a fault."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_low_noise"
+    ]
+}

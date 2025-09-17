@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "a subsurface representation. It has a reverse fault dipping right of high frequency and low noise.",
+        "we see here a 2D subsurface model of a compressional tectonic settings dipping east. It has high frequency and low noise.",
+        "a model. It is a compressional tectonic settings dipping east with high frequency and low noise.",
+        "we observe here a sesimic section of a compressional fault. It has high frequency and low noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_high_frequency_low_noise"
+    ]
+}

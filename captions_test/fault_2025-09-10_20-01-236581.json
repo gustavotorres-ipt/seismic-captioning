@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we observe here a seismic model. It has a structural discontinuity. It has high frequency and low noise.",
+        "this image represents a sesimic section. It has a tectonic fault.",
+        "this image demonstrates a seismic image. It has a rigid deformation known or fault dipping left. It is high frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_low_noise"
+    ]
+}

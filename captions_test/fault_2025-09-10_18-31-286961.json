@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "we see here a section. It has a tectonic fault.",
+        "we observe here a seismic model of a geologic rigid deformation.",
+        "we observe here a sesimic section. It has a rigid deformation known or fault.",
+        "this image represents a subsurface model of a tectonic deformation."
+    ],
+    "labels": [
+        "fault_dipping_west_low_frequency_high_noise"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "captions": [
+        "we observe here a section. It is a horizons displacement along fault. It has high frequency and low noise.",
+        "this image demonstrates a model. It has a geologic rigid deformation dipping east.",
+        "a model with a dip-slip fault. It has high frequency and low noise.",
+        "we see here a 2D section. It is a dip-slip fault dipping right. It has high frequency and low noise.",
+        "this depicts a subsurface representation. It has a tectonic deformation."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_low_noise"
+    ]
+}

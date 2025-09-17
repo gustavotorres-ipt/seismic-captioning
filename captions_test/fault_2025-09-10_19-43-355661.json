@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we observe here a seismic image with a tectonic fault dipping right. It is low frequency and high noise.",
+        "this image represents a subsurface model with a tectonic deformation dipping right.",
+        "we observe here a 2D seismic model of a tectonic deformation dipping east with low frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_east_low_frequency_high_noise"
+    ]
+}

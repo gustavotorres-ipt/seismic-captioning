@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "a sesimic section with a reverse tectonics. It has low frequency and high noise.",
+        "we see here a 2D section with a compressional fault.",
+        "we observe here a section. It is a movement dipping right. It is low frequency and high noise."
+    ],
+    "labels": [
+        "fault_reverse_dipping_east_low_frequency_high_noise"
+    ]
+}

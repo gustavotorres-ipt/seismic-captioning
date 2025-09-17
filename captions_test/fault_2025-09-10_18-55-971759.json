@@ -1,0 +1,10 @@
+{
+    "captions": [
+        "we observe here a seismic image. It has a geologic rigid deformation dipping east. It is high frequency and high noise.",
+        "this image demonstrates a 2D seismic model. It has a horizons displacement along fault dipping right.",
+        "a 2D seismic model with a tectonic fault dipping east."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_high_noise"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "captions": [
+        "this depicts a subsurface representation. It is a structural discontinuity dipping right.",
+        "this image represents a sesimic section. It is a horizons displacement along fault dipping right. It is high frequency and low noise.",
+        "this image represents a sesimic section of a fault.",
+        "this depicts a subsurface representation. It is a horizons displacement along fault of high frequency and low noise."
+    ],
+    "labels": [
+        "fault_dipping_east_high_frequency_low_noise"
+    ]
+}

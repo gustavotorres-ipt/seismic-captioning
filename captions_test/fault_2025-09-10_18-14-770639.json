@@ -1,0 +1,12 @@
+{
+    "captions": [
+        "this depicts a seismic model. It has a tectonic deformation of high frequency and high noise.",
+        "this depicts a seismic image. It has a geologic rigid deformation dipping left with high frequency and high noise.",
+        "this depicts a seismic model. It is a geologic rigid deformation.",
+        "we see here a seismic model. It has a tectonic deformation dipping left.",
+        "this depicts a subsurface representation of a structural deformation with high frequency and high noise."
+    ],
+    "labels": [
+        "fault_dipping_west_high_frequency_high_noise"
+    ]
+}
