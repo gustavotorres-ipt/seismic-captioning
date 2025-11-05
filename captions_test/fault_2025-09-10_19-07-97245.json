@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "a subsurface model with a structural discontinuity dipping west with high frequency and low noise.",
-        "this image demonstrates a seismic image with a tectonic deformation dipping west."
-    ],
-    "labels": [
-        "fault_dipping_west_high_frequency_low_noise"
-    ]
-}

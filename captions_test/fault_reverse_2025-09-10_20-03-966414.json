@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "we observe here a sesimic section. It is a reverse-slip fault dipping right of low frequency and high noise.",
-        "a seismic image. It has a compressional fault dipping right. It is low frequency and high noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_low_frequency_high_noise"
-    ]
-}

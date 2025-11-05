@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a subsurface model of a structural deformation. It has high frequency and low noise.",
-        "this depicts a subsurface representation of a structural deformation dipping west."
-    ],
-    "labels": [
-        "fault_dipping_west_high_frequency_low_noise"
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image demonstrates a seismic model of a reverse fault with high frequency and high noise.",
-        "we observe here a 2D subsurface model of a compressional structural fault."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_high_frequency_high_noise"
-    ]
-}

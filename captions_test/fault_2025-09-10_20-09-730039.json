@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a subsurface model. It is a tectonic fault dipping west.",
-        "this image demonstrates a sesimic section. It is a horizons displacement along fault. It has high frequency and low noise."
-    ],
-    "labels": [
-        "fault_dipping_west_high_frequency_low_noise"
-    ]
-}

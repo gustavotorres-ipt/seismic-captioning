@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "a 2D subsurface model of a compressional structural fault. It has high frequency and high noise.",
-        "this image represents a 2D subsurface model with a reverse-slip fault dipping left with high frequency and high noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_west_high_frequency_high_noise"
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image represents a subsurface model with a dip-slip fault.",
-        "this depicts a 2D seismic model. It is a structural deformation of low frequency and low noise."
-    ],
-    "labels": [
-        "fault_dipping_west_low_frequency_low_noise"
-    ]
-}

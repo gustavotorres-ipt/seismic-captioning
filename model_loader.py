@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModel
 from torchvision import models
+from config import VISION_MODEL, LANGUAGE_MODEL
 
 class CustomCLIPModel(nn.Module):
     def __init__(self, image_encoder, text_encoder, init_temperature=0.1):
@@ -123,22 +124,29 @@ class CLIPDecoder(nn.Module):
 
 def load_custom_encoders():
     # image_encoder
-    resnet18 = models.resnet18(pretrained=False)
-    image_encoder = nn.Sequential(
-        resnet18.conv1,
-        resnet18.bn1,
-        resnet18.relu,
-        resnet18.maxpool,
-        resnet18.layer1,
-        resnet18.layer2,
-        resnet18.layer3,
-        resnet18.layer4,
-        resnet18.avgpool
-    )
-    image_encoder.load_state_dict(torch.load('resnet18_text_encoder.pth'))  # Custom image encoder
+    # resnet18 = models.resnet18(pretrained=False)
+    # image_encoder = nn.Sequential(
+    #     resnet18.conv1,
+    #     resnet18.bn1,
+    #     resnet18.relu,
+    #     resnet18.maxpool,
+    #     resnet18.layer1,
+    #     resnet18.layer2,
+    #     resnet18.layer3,
+    #     resnet18.layer4,
+    #     resnet18.avgpool
+    # )
+    if "resnet50" in VISION_MODEL:
+        model = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
+    else:
+        model = models.resnet34(weights=models.ResNet34_Weights.DEFAULT)
+
+    text_encoder = AutoModel.from_pretrained(LANGUAGE_MODEL)
+
+    image_encoder = nn.Sequential(*list(model.children())[:-1])
+    image_encoder.load_state_dict(torch.load(VISION_MODEL))  # Custom image encoder
     image_encoder.eval()
 
-    text_encoder = AutoModel.from_pretrained('seismic_distilbert.pt')
     return image_encoder, text_encoder
 
 def load_clip_model():

@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "we see here a model. It is a movement with low frequency and high noise.",
-        "a section. It has a downward tectonic with low frequency and high noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_low_frequency_high_noise"
-    ]
-}

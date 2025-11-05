@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a seismic model of a reverse fault dipping east.",
-        "we see here a seismic model. It is a reverse-slip fault with high frequency and high noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_high_frequency_high_noise"
-    ]
-}

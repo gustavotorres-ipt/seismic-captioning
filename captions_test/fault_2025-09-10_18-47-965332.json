@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "we see here a seismic image. It is a fault dipping east.",
-        "we observe here a sesimic section. It is a geologic rigid deformation dipping east."
-    ],
-    "labels": [
-        "fault_dipping_east_low_frequency_low_noise"
-    ]
-}

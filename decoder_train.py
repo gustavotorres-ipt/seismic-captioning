@@ -6,12 +6,12 @@ import torch.nn.functional as F
 import open_clip
 from tqdm import tqdm
 from torch.utils.data import DataLoader
-from dataset import IMAGE_FOLDER, TEXT_FOLDER, load_datasets
+from dataset import load_datasets
 from transformers import AutoTokenizer, AutoModel
 from model_loader import CustomCLIPModel, load_custom_encoders, CLIPDecoder
 from torchvision.transforms.functional import to_pil_image
 from torch.optim import lr_scheduler
-from config import N_EPOCHS, CUSTOM_CLIP_FILE, WEIGHTS_PATH, device
+from config import N_EPOCHS, CUSTOM_CLIP_FILE, WEIGHTS_PATH, device, IMAGE_FOLDER, TEXT_FOLDER
 
 
 @torch.no_grad

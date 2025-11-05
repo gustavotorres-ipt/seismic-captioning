@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a model. It has a structural discontinuity. It is low frequency and high noise.",
-        "this image represents a model with a structural discontinuity."
-    ],
-    "labels": [
-        "fault_dipping_east_low_frequency_high_noise"
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a seismic model of a movement of high frequency and high noise.",
-        "this image represents a seismic image. It has a compressional fault."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_high_frequency_high_noise"
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "we see here a model of a downward tectonic dipping west with high frequency and high noise.",
-        "we observe here a seismic image with a compressional fault dipping left."
-    ],
-    "labels": [
-        "fault_reverse_dipping_west_high_frequency_high_noise"
-    ]
-}

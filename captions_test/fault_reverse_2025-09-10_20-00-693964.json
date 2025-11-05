@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "we observe here a 2D seismic model. It has a movement dipping east. It is low frequency and low noise.",
-        "we observe here a subsurface representation. It has a compressional structural fault of low frequency and low noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_low_frequency_low_noise"
-    ]
-}

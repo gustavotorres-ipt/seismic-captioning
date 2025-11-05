@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a 2D subsurface model. It is a structural deformation dipping east.",
-        "this image demonstrates a subsurface model with a tectonic deformation."
-    ],
-    "labels": [
-        "fault_dipping_east_low_frequency_high_noise"
-    ]
-}

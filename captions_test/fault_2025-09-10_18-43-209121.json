@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image demonstrates a sesimic section with a tectonic fault dipping left.",
-        "this image demonstrates a sesimic section with a tectonic deformation. It is low frequency and low noise."
-    ],
-    "labels": [
-        "fault_dipping_west_low_frequency_low_noise"
-    ]
-}

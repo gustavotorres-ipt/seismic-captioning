@@ -1,5 +1,13 @@
 *.pth
 *.pt
-captions/
+captions*
 images/
+legendas_sismofacies/
 __pycache__/
+images_test
+*.bak
+*.png
+*.jpg
+embeddings_sismicos*
+chromadb.ipynb
+imagens_janelas_sismofacies/

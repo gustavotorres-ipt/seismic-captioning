@@ -4,10 +4,7 @@ import random
 import torch
 from torch.utils.data import random_split
 from PIL import Image
-
-
-IMAGE_FOLDER = "images"
-TEXT_FOLDER = "captions"
+from config import IMAGE_FOLDER, TEXT_FOLDER
 
 
 def read_captions_json(file_path):

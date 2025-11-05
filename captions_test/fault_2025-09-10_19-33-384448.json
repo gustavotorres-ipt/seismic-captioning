@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image represents a section. It is a tectonic deformation dipping east.",
-        "this depicts a seismic image. It is a horizons displacement along fault of high frequency and high noise."
-    ],
-    "labels": [
-        "fault_dipping_east_high_frequency_high_noise"
-    ]
-}

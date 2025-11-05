@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a 2D subsurface model. It has a reverse tectonics.",
-        "this depicts a 2D subsurface model with a downward tectonic dipping right. It has high frequency and high noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_high_frequency_high_noise"
-    ]
-}

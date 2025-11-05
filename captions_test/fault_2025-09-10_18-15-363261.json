@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image demonstrates a 2D subsurface model with a rigid deformation known or fault dipping east. It has high frequency and high noise.",
-        "this image demonstrates a model with a tectonic fault."
-    ],
-    "labels": [
-        "fault_dipping_east_high_frequency_high_noise"
-    ]
-}

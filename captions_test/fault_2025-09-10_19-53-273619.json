@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image represents a subsurface representation of a dip-slip fault.",
-        "this image represents a sesimic section. It has a horizons displacement along fault."
-    ],
-    "labels": [
-        "fault_dipping_west_low_frequency_low_noise"
-    ]
-}

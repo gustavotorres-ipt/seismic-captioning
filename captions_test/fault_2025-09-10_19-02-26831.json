@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "we observe here a sesimic section with a rigid deformation known or fault.",
-        "we see here a 2D section. It has a geologic rigid deformation. It is low frequency and high noise."
-    ],
-    "labels": [
-        "fault_dipping_east_low_frequency_high_noise"
-    ]
-}

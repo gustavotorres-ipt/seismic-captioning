@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "we see here a section. It has a compressional tectonic settings. It is high frequency and low noise.",
-        "a seismic image with a reverse tectonics dipping east."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_high_frequency_low_noise"
-    ]
-}

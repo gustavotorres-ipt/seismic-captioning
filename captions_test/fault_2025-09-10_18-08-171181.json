@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image demonstrates a subsurface model. It has a fault dipping right.",
-        "we see here a 2D seismic model. It is a geologic rigid deformation."
-    ],
-    "labels": [
-        "fault_dipping_east_high_frequency_high_noise"
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "we observe here a 2D subsurface model with a structural deformation with low frequency and low noise.",
-        "this depicts a 2D subsurface model. It is a tectonic deformation dipping east. It has low frequency and low noise."
-    ],
-    "labels": [
-        "fault_dipping_east_low_frequency_low_noise"
-    ]
-}

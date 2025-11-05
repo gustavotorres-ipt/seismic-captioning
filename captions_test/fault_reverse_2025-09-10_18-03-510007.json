@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image represents a subsurface representation. It has a compressional tectonic settings. It has high frequency and high noise.",
-        "this depicts a 2D section. It has a compressional tectonics dipping west."
-    ],
-    "labels": [
-        "fault_reverse_dipping_west_high_frequency_high_noise"
-    ]
-}

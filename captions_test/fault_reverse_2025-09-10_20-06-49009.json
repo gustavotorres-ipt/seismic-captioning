@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image represents a section. It is a downward tectonic.",
-        "a seismic image with a reverse fault of high frequency and high noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_high_frequency_high_noise"
-    ]
-}

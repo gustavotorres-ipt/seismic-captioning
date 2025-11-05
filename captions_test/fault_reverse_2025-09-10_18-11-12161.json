@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image demonstrates a model with a compressional fault.",
-        "a seismic image. It has a downward tectonic."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_low_frequency_low_noise"
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this image represents a sesimic section. It has a compressional tectonic settings. It has low frequency and low noise.",
-        "this image represents a 2D subsurface model of a reverse-slip fault with low frequency and low noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_west_low_frequency_low_noise"
-    ]
-}

@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a sesimic section with a downward tectonic of high frequency and high noise.",
-        "we observe here a subsurface representation. It is a reverse-slip fault. It has high frequency and high noise."
-    ],
-    "labels": [
-        "fault_reverse_dipping_west_high_frequency_high_noise"
-    ]
-}

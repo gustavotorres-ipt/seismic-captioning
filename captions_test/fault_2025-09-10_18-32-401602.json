@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a seismic image of a rigid deformation known or fault dipping west.",
-        "we see here a 2D section of a tectonic fault."
-    ],
-    "labels": [
-        "fault_dipping_west_high_frequency_high_noise"
-    ]
-}

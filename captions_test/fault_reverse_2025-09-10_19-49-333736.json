@@ -1,9 +1,0 @@
-{
-    "captions": [
-        "this depicts a 2D subsurface model. It is a reverse-slip fault. It has high frequency and low noise.",
-        "we observe here a model with a compressional tectonics."
-    ],
-    "labels": [
-        "fault_reverse_dipping_east_high_frequency_low_noise"
-    ]
-}
